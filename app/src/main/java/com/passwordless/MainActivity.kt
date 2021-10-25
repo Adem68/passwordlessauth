@@ -91,7 +91,6 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
-            // If QRCode has no data.
             if (result.contents == null) {
                 Toast.makeText(this, "result null", Toast.LENGTH_LONG).show()
             } else {
@@ -108,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                 val json = JSONObject()
                 json.put("code", result.contents)
                 json.put("device_id", deviceId)
-                Fuel.post("http://9929-88-236-113-33.ngrok.io/claim")
+                Fuel.post("https://flowsys.cloud/claim")
                     .jsonBody(json.toString())
                     .also { println(it) }
                     .response { result -> }
