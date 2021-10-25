@@ -4,6 +4,7 @@
     package="com.passwordless">
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
